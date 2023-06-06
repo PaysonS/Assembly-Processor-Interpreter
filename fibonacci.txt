@@ -1,0 +1,36 @@
+; compute the Fibonacci sequence
+
+
+		ld		zero		; $first = 0
+		st		first
+		ld		one			; $second = 1
+		st		second
+
+		get					; get $n from the user
+		st		n
+
+		ld		one			; $i = 1
+		st		i
+loop	ld		first		; display $first
+		put
+		add		second		; $temp = $first + $second
+		st		tmp
+		ld		second		; $first = $second
+		st		first
+		ld		tmp			; $second = $tmp
+		st		second
+		ld		i			; $i++
+		add		one
+		st		i
+		cmp		n			; if $i <= $n
+		jle		loop		; go back and compute the next Fibonacci number
+
+		halt				; terminate the program
+
+zero 	const 0
+one 	const 1
+first	const
+second	const
+tmp		const
+n		const
+i 		const

@@ -1,0 +1,23 @@
+; loop iteration
+
+
+loopInit	ld		one
+			st		i
+			j		loopTest
+loopBody	ld		i
+			put
+			j		loopCont
+loopTest	ld		i
+			cmp		ten
+			jg		out
+			j		loopBody
+loopCont	ld		i
+			add		one
+			st		i
+			j		loopTest
+
+out			halt
+
+one			const 1
+ten			const 10
+i			const

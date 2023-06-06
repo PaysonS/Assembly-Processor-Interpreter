@@ -1,0 +1,30 @@
+; compute the sum of squares from 1 to n
+; Approach:
+
+		ld		zero	; $sum = 0
+		st		sum
+		ld 		one		; $i = 1
+		st		i
+
+		get				; read $n from the user
+		st		n
+
+loop	ld		i		; $i^2
+		mul		i
+		add		sum		; $sum += $i
+		st		sum
+		ld		i		; $i++
+		add		one
+		st		i
+		cmp		n		; if $i < $n
+		jl		loop	; go back and compute the square of the next $i
+
+		ld		sum		; print $sum
+		put
+		halt			; terminate the program
+
+zero	const 0
+one		const 1
+sum		const
+i		const
+n		const

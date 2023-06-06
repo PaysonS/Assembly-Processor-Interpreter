@@ -1,0 +1,21 @@
+; prints two numbers multiplied together/prints the area of a rectangle
+
+		get         	; read $width from the user
+		st		width
+
+		get         	; read $length from the user
+		st		len
+
+		ld		width	; $area = $width
+		st		area
+		ld		len		; $area = $area * $len
+		mul		area
+		st 		area
+
+		ld		area    ; display $area
+		put
+		halt			; terminate the program
+
+area 	const
+len		const
+width	const
